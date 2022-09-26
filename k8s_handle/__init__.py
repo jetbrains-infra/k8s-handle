@@ -128,7 +128,18 @@ def _handler_provision(command, resources, priority_evaluator, use_kubeconfig, s
         executor.run(resource)
 
 
-parser = argparse.ArgumentParser(description='CLI utility generate k8s resources by templates and apply it to cluster')
+parser = argparse.ArgumentParser(
+        formatter_class=argparse.RawDescriptionHelpFormatter,
+        description='CLI utility generate k8s resources by templates and apply it to cluster',
+        epilog='''
+Environment variables:
+    TEMP_DIR=/tmp/k8s-handle - Set path to temporary directory to save rendered templates
+    TEMPLATES_DIR=templates - Set path to templates directory where k8s-handle read templates
+    CONFIG_FILE=config.yaml - Set path to the main config.yaml
+    K8S_CONFIG_DIR=~/.kube - Set path to kubeconfig directory, used for --use-kubeconfig key
+    LOG_LEVEL=INFO - Set log level for k8s-handle [DEBUG | INFO | WARN | ERROR | FATAL]
+''')
+
 subparsers = parser.add_subparsers(dest="command")
 subparsers.required = True
 
