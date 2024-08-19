@@ -27,6 +27,7 @@ class Adapter:
         'apps/v1': client.AppsV1Api,
         'autoscaling/v1': client.AutoscalingV1Api,
         'autoscaling/v2beta2': client.AutoscalingV2beta2Api,
+        'autoscaling/v2': client.AutoscalingV2Api,
         'rbac.authorization.k8s.io/v1': client.RbacAuthorizationV1Api,
         'scheduling.k8s.io/v1': client.SchedulingV1Api,
         'networking.k8s.io/v1': client.NetworkingV1Api,
