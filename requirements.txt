@@ -5,4 +5,3 @@ kubernetes==24.2.0
 semver==3.0.1
 urllib3==1.26.16
 pytz==2023.3.post1
-urllib3==1.26.16
